@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+<title>Kilkee Tide & Sky</title>
+
+<link rel="manifest" href="manifest.json">
+
+<style>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #0d2b3e;
+  color: white;
+}
+
+.container {
+  padding: 20px;
+}
+
+.header {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(10px);
+}
+
+.label {
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.value {
+  font-size: 22px;
+  margin-top: 4px;
+}
+
+.big {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.nav-item {
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+.nav-item.active {
+  opacity: 1;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="header">Kilkee</div>
+
+  <div class="card">
+    <div class="label">Current Tide</div>
+    <div class="big" id="tide">Loading...</div>
+  </div>
+
+  <div class="card">
+    <div class="row">
+      <div>
+        <div class="label">Next High</div>
+        <div class="value" id="high">--</div>
+      </div>
+      <div>
+        <div class="label">Next Low</div>
+        <div class="value" id="low">--</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="label">Weather</div>
+    <div class="value" id="weather">Loading...</div>
+  </div>
+
+</div>
+
+<div class="bottom-nav">
+  <div class="nav-item active">Today</div>
+  <div class="nav-item">Forecast</div>
+  <div class="nav-item">Settings</div>
+</div>
+
+<script>
+// FAKE DATA (we'll replace later)
+document.getElementById("tide").innerText = "Rising";
+document.getElementById("high").innerText = "14:32";
+document.getElementById("low").innerText = "20:10";
+document.getElementById("weather").innerText = "15°C · Light wind";
+</script>
+
+</body>
+</html>
